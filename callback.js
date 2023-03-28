@@ -1,24 +1,80 @@
 
+let arr = [{name:"p2234", price:123,cat:"eadible"},
+{name:"p3434", price:345, cat:"eadible"},
+{name:"p32433", price:543, cat:"toys"}]
 
-let arr=[1,2,3,4,4,5];
 
-let newarr= arr.map(callback)
+let num= arr.reduce((salesval, ele)=>{
+    if(ele.cat==="eadible"){
+        salesval=salesval+ele.price;
 
-
-function callback(ele){
-    return ele*2;
-}
-console.log(newarr);
-
-let newarr2 =arr.map(function(ele){
-    if(ele%2===0){
-        return ele*2;
     }
-})
-console.log(newarr2)
+    return salesval;
 
-let newarr3 =arr.map((ele)=>ele*2);
-console.log(newarr3);
+}, 0)
+
+console.log(num);
+
+// let arr=[2,2,8,4,4,6,0,0,0,0];
+
+// let val= arr.reduce((initialval, currentval)=>{
+//       initialval=initialval+currentval;
+//       return initialval
+// },0)
+// console.log(val)
+// let arr2=arr.reverse()
+// console.log(arr2,arr);
+// arr.lastIndexOf()
+
+// let arr2=["cat","rat","mat","pet"];
+// arr2.includes()
+
+// // arr.findIndex()
+
+// console.log(arr.includes(2,3));
+// let num=arr.find((ele)=>{
+//    if(ele===0){
+//     return true;
+//    }
+// })
+// console.log(num);
+
+// arr.fill(9,3,7);
+// console.log(arr);
+
+// let bool=arr.every((ele)=>{
+//     if(ele%2===0){
+//         return true;
+//     }
+//     else false;
+// })
+// console.log(bool)
+
+
+// let arr2=[3,8,9]
+// let newarr=arr.concat([3,7,9],arr2);
+//  console.log(newarr)
+
+// console.log(arr.join('|'))
+
+
+// let newarr= arr.map(callback)
+
+
+// function callback(ele){
+//     return ele*2;
+// }
+// console.log(newarr);
+
+// let newarr2 =arr.map(function(ele){
+//     if(ele%2===0){
+//         return ele*2;
+//     }
+// })
+// console.log(newarr2)
+
+// let newarr3 =arr.map((ele)=>ele*2);
+// console.log(newarr3);
 //let arr= ["nita", "sita", "aman", "ram","nikita","neelam"];
 
 // console.log(arr.at(3));
