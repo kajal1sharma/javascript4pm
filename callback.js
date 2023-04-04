@@ -1,19 +1,38 @@
 
-let arr = [{name:"p2234", price:123,cat:"eadible"},
-{name:"p3434", price:345, cat:"eadible"},
-{name:"p32433", price:543, cat:"toys"}]
+// let arr= [1,12,13,4,15,5,6];
+
+// let arr2=arr.slice();
+// console.log(arr,arr2);
+// arr.splice()
+
+// let arr2= arr.sort((a,b)=>{
+//     if(a>b){
+//         return 1;
+//     }
+//     else if(a===b){
+//         return 0;
+//     }
+//     else{
+//         return -1;
+//     }
+// });
+//  console.log(arr2,arr)
+
+// let arr = [{name:"p2234", price:123,cat:"eadible"},
+// {name:"p3434", price:345, cat:"eadible"},
+// {name:"p32433", price:543, cat:"toys"}]
 
 
-let num= arr.reduce((salesval, ele)=>{
-    if(ele.cat==="eadible"){
-        salesval=salesval+ele.price;
+// let num= arr.reduce((salesval, ele)=>{
+//     if(ele.cat==="eadible"){
+//         salesval=salesval+ele.price;
 
-    }
-    return salesval;
+//     }
+//     return salesval;
 
-}, 0)
+// }, 0)
 
-console.log(num);
+// console.log(num);
 
 // let arr=[2,2,8,4,4,6,0,0,0,0];
 
