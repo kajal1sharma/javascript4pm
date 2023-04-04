@@ -1,4 +1,5 @@
-function doSomeAsyn(){
+async function doSomething(){
+    function doSomeAsyn(){
     let promiseVar = new Promise(function callback(resolve, reject){
         setTimeout(function operation(){
             let a =190;
@@ -29,7 +30,7 @@ function doSomeAsyn(){
  return promiseVar;  
 }
 
-let promise =doSomeAsyn();
+let promise = await doSomeAsyn();
 
 promise.then(function callback(promiseresult){
     // console.log(data);
@@ -42,6 +43,11 @@ promise.then(function callback(promiseresult){
     console.log(err);
 })
 
+console.log("iam a synchronous line")
+
+}
+
+doSomething()
 
 // function apiRequest(){
 
