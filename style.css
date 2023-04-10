@@ -18,6 +18,10 @@ background: linear-gradient(0deg, rgba(14,158,200,0.8828781512605042) 20%, rgba(
     background-color: white;
 }
 
+.newbutton{
+    padding: 10px;
+    background-color: aqua;
+}
 
 h1{
     text-align: center;
