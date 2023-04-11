@@ -5,17 +5,25 @@ window.addEventListener('load',()=>{
         return data.json()
     })
     .then(data=>{
-        console.log(data);
+        // console.log(data);
+        data=[{title:"all new task"},{title:"new task"}];
         let todoDiv = document.getElementById("todoItems")
-        data.forEach(element => {
+        data.forEach((element, index) => {
 
             let div= document.createElement('div')
             div.innerText =element.title;
+            
             let buttonnew = document.createElement('button');
             buttonnew.innerText="close";
             buttonnew.className="newbutton"
-            // buttonnew.style.padding="20px";
-            // buttonnew.style.backgroundColor ="pink";
+            
+            buttonnew.addEventListener('click',()=>{
+                console.log(element,index);
+                data.splice(index,1);
+                console.log(data);
+                todoDiv.removeChild(div);
+
+            })
 
             div.appendChild(buttonnew);
             todoDiv.appendChild(div)
