@@ -1,0 +1,21 @@
+.hero_container{
+    background-color: aquamarine;
+}
+
+.card{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+.card>div{
+    width:30vw;
+    background-color: aliceblue;
+
+}
+
+img{
+    width:150px;
+    height:200px;
+}
