@@ -1,10 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+
 import Hero from "./component/Hero"
 
 function App() {
   return (
     <div>
+     <Hero/>
+     <Hero/>
+     <Hero/>
+     <Hero/>
      <Hero/>
      <div className='btn btn-primary'>
           submit button
