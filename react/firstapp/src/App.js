@@ -1,17 +1,9 @@
-
-import Hero from "./component/Hero"
-
+import React from "react";
+import Menu from "./component/Menu";
 function App() {
   return (
-    <div>
-     <Hero/>
-     <Hero/>
-     <Hero/>
-     <Hero/>
-     <Hero/>
-     <div className='btn btn-primary'>
-          submit button
-     </div>
+    <div style={{backgroundColor:"black",width:"100vw"}}>
+    <Menu/>
     </div>
   );
 }
