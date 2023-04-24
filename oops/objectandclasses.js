@@ -7,8 +7,11 @@ class BankAccount{
         this.balance=balance;
       
     }
-    debit=function(debitAmount){
+    debit(debitAmount){
         this.balance=this.balance-debitAmount
+    }
+    credit(creditAmount){
+        this.balance=this.balance+creditAmount
     }
 }
 
