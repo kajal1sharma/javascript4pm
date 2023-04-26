@@ -1,24 +1,65 @@
 
-
 class BankAccount{
-    constructor(accountNumber, name, balance){
-        this.accountNumber=accountNumber;
-        this.name=name;
-        this.balance=balance;
-      
+    constructor(accountNumber , name, balance=0){
+         this.accountNumber=accountNumber;
+         this.name=name;
+         this.balance=balance;
     }
     debit(debitAmount){
-        this.balance=this.balance-debitAmount
+        //this.balance=this.balance-debitAmount;
+        this.balance-=debitAmount;
     }
     credit(creditAmount){
-        this.balance=this.balance+creditAmount
+        // this.balance=this.balance/creditAmount;
+        // this.balance/=creditAmount;
+        this.balance+=creditAmount;
     }
 }
 
-let b1= new BankAccount(123231, "rajeev", 12000);
-let b2= new BankAccount(123123,"reena", 60000);
+class Loan extends BankAccount{
+    constructor(accountNumber,loanAmount, firstname){
+        super(accountNumber,firstname);
+        this.loanAmount=loanAmount;
 
-console.log(b1,b2)
+    }
+}
+
+class Insurance extends Loan{
+    constructor(accountNumber, loanAmount, insuranceAmount, name){
+         super(accountNumber,loanAmount,name);
+         this.insuranceAmount=insuranceAmount;
+    }
+}
+
+let insobj = new Insurance(213123, 4000, 20000,"leena");
+console.log(insobj)
+
+// let  l=new Loan(2343423,4500);
+// let obj =new BankAccount(3223423,"nita",45000)
+// l.debit(2000)
+// console.log(l);
+//prototype chaining
+
+
+// class BankAccount{
+//     constructor(accountNumber, name, balance){
+//         this.accountNumber=accountNumber;
+//         this.name=name;
+//         this.balance=balance;
+      
+//     }
+//     debit(debitAmount){
+//         this.balance=this.balance-debitAmount
+//     }
+//     credit(creditAmount){
+//         this.balance=this.balance+creditAmount
+//     }
+// }
+
+// let b1= new BankAccount(123231, "rajeev", 12000);
+// let b2= new BankAccount(123123,"reena", 60000);
+
+// console.log(b1,b2)
 
 
 // function BankAccount(accountNumber, name, balance){
