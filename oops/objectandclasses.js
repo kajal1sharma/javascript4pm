@@ -1,70 +1,106 @@
-window.addEventListener('load',()=>{
-    let productName=""
-    let productPrice=""
-    let productarr=[];
-    class product{
-        constructor(pname, pprice){
-            this.pname=pname;
-            this.pprice=pprice;
-        }
-    }
-    let input1=document.getElementById('input1');
-    let input2=document.getElementById('input2');
-    let submit =document.getElementById('submit');
-    input1.addEventListener('input',(event)=>{
-        // console.log(event)
-        productName=event.target.value
-        console.log(productName);
-    })
-    input2.addEventListener('input',(event)=>{
-        // console.log(event)
-        productPrice=event.target.value
-        console.log(productPrice);
-    })
-    submit.addEventListener('click',()=>{
-        const pro= new product(productName,productPrice);
-        productarr.push(pro);
-        console.log(productarr)
-    })
 
-})
+//abc of javascritp
+//a=> apply b=bind c=call
 
+const person = {
+    fullName: function(a , b,c) {
+        console.log(a+b+c);
+      return this.firstName + " " + this.lastName;
+    }
+  }
+  
+  const person1 = {
+    firstName: "Mary",
+    lastName: "Doe"
+  }
+  
+  // This will return "Mary Doe":
+ console.log(person.fullName.call(person1,1,2,3));
+ console.log(person.fullName.apply(person1,[1,2,3]));
+ const newfunc=person.fullName.bind(person1);
+ console.log(newfunc(1,2,3));
 
+let obj ={name:"leena", age:23};
 
-class BankAccount{
-    constructor(accountNumber , name, balance=0){
-         this.accountNumber=accountNumber;
-         this.name=name;
-         this.balance=balance;
-    }
-    debit(debitAmount){
-        //this.balance=this.balance-debitAmount;
-        this.balance-=debitAmount;
-    }
-    credit(creditAmount){
-        // this.balance=this.balance/creditAmount;
-        // this.balance/=creditAmount;
-        this.balance+=creditAmount;
-    }
+let newobj={
+    name:"rita",
+    age:"24",
+printYourInfo:function(){
+    
+    console.log(this);
+    console.log(this.name+" "+this.age);
+}
 }
 
-class Loan extends BankAccount{
-    constructor(accountNumber,loanAmount, firstname){
-        super(accountNumber,firstname);
-        this.loanAmount=loanAmount;
+const fucnt=newobj.printYourInfo.bind(obj);
+fucnt();
+// window.addEventListener('load',()=>{
+//     let productName=""
+//     let productPrice=""
+//     let productarr=[];
+//     class product{
+//         constructor(pname, pprice){
+//             this.pname=pname;
+//             this.pprice=pprice;
+//         }
+//     }
+//     let input1=document.getElementById('input1');
+//     let input2=document.getElementById('input2');
+//     let submit =document.getElementById('submit');
+//     input1.addEventListener('input',(event)=>{
+//         // console.log(event)
+//         productName=event.target.value
+//         console.log(productName);
+//     })
+//     input2.addEventListener('input',(event)=>{
+//         // console.log(event)
+//         productPrice=event.target.value
+//         console.log(productPrice);
+//     })
+//     submit.addEventListener('click',()=>{
+//         const pro= new product(productName,productPrice);
+//         productarr.push(pro);
+//         console.log(productarr)
+//     })
 
-    }
-}
+// })
 
-class Insurance extends Loan{
-    constructor(accountNumber, loanAmount, insuranceAmount, name){
-         super(accountNumber,loanAmount,name);
-         this.insuranceAmount=insuranceAmount;
-    }
-}
 
-let insobj = new Insurance(213123, 4000, 20000,"leena");
-console.log(insobj)
+
+// class BankAccount{
+//     constructor(accountNumber , name, balance=0){
+//          this.accountNumber=accountNumber;
+//          this.name=name;
+//          this.balance=balance;
+//     }
+//     debit(debitAmount){
+//         //this.balance=this.balance-debitAmount;
+//         this.balance-=debitAmount;
+//     }
+//     credit(creditAmount){
+//         // this.balance=this.balance/creditAmount;
+//         // this.balance/=creditAmount;
+//         this.balance+=creditAmount;
+//     }
+// }
+
+// class Loan extends BankAccount{
+//     constructor(accountNumber,loanAmount, firstname){
+//         super(accountNumber,firstname);
+//         this.loanAmount=loanAmount;
+
+//     }
+// }
+
+// class Insurance extends Loan{
+//     constructor(accountNumber, loanAmount, insuranceAmount, name){
+//          super(accountNumber,loanAmount,name);
+//          this.insuranceAmount=insuranceAmount;
+//     }
+// }
+
+// let insobj = new Insurance(213123, 4000, 20000,"leena");
+// console.log(insobj)
 
 // let  l=new Loan(2343423,4500);
 // let obj =new BankAccount(3223423,"nita",45000)
