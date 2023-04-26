@@ -1,3 +1,35 @@
+window.addEventListener('load',()=>{
+    let productName=""
+    let productPrice=""
+    let productarr=[];
+    class product{
+        constructor(pname, pprice){
+            this.pname=pname;
+            this.pprice=pprice;
+        }
+    }
+    let input1=document.getElementById('input1');
+    let input2=document.getElementById('input2');
+    let submit =document.getElementById('submit');
+    input1.addEventListener('input',(event)=>{
+        // console.log(event)
+        productName=event.target.value
+        console.log(productName);
+    })
+    input2.addEventListener('input',(event)=>{
+        // console.log(event)
+        productPrice=event.target.value
+        console.log(productPrice);
+    })
+    submit.addEventListener('click',()=>{
+        const pro= new product(productName,productPrice);
+        productarr.push(pro);
+        console.log(productarr)
+    })
+
+})
+
+
 
 class BankAccount{
     constructor(accountNumber , name, balance=0){
