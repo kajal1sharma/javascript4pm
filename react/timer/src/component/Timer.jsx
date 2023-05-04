@@ -1,31 +1,39 @@
 import React, { useEffect, useState } from 'react'
 
-const Timer1 = ({data}) => {
-    const [timer ,setTimer] =useState(0);
-    setTimeout(() => {
-        setTimer(timer+1);
-    }, 1000);
-  return (
-    <div>
-       This is Timer1 component
-      <h1>
-        {timer}
-        {data}
-        
-      </h1>
-    </div>
-  )
+function Timer({time}){
+
+  return <h2 style={{color:"red"}}>{time}</h2>
 }
 
-const Timer2 = () => {
+export default Timer;
 
 
-    return (
-      <div>
-        <h1>This is Timer2 component</h1> 
+// const Timer1 = ({data}) => {
+//     const [timer ,setTimer] =useState(0);
+//     setTimeout(() => {
+//         setTimer(timer+1);
+//     }, 1000);
+//   return (
+//     <div>
+//        This is Timer1 component
+//       <h1>
+//         {timer}
+//         {data}
         
-      </div>
-    )
-  }
+//       </h1>
+//     </div>
+//   )
+// }
 
-  export {Timer1,Timer2}
+// const Timer2 = () => {
+
+
+//     return (
+//       <div>
+//         <h1>This is Timer2 component</h1> 
+        
+//       </div>
+//     )
+//   }
+
+//   export {Timer1,Timer2}
