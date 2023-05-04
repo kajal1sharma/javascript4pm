@@ -11,6 +11,7 @@ const Timer1 = ({data}) => {
       <h1>
         {timer}
         {data}
+        
       </h1>
     </div>
   )
