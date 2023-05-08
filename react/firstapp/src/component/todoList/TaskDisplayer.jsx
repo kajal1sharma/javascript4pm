@@ -1,8 +1,12 @@
 import React from 'react'
+import SingleTask from './SingleTask'
 
-const TaskDisplayer = () => {
+const TaskDisplayer = ({data}) => {
   return (
     <div>
+      {data.map(ele=>{
+        return <SingleTask ele={ele}/>
+      })}
       
     </div>
   )

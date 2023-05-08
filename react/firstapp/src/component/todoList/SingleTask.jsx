@@ -1,10 +1,12 @@
 import React from 'react'
 
-const SingleTask = () => {
+const SingleTask = ({ele}) => {
   return (
-    <div>
-      
-    </div>
+    
+      <div style={{color:'red',fontSize:'30px'}}>
+          {ele}
+          </div>
+  
   )
 }
 

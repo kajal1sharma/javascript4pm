@@ -1,20 +1,17 @@
-import React from "react";
+import React,{useState} from "react";
 import Header from "./component/todoList/Header"
 import InputBox from "./component/todoList/InputBox";
+import TaskDisplayer from "./component/todoList/TaskDisplayer";
 function App() {
+
+  const [data, setData] =useState([]);
+
   return (
-   
-    <div >
-      <div style={{border:"5px solid black"}}>
-        <Header/>
-      </div>
-      <div style={{border:"5px solid black"}}>
-        <InputBox/>
-      </div>
-      <div style={{border:"5px solid black"}}>
-        hi this is next element
-      </div>
-    </div>
+ <div>
+  <Header/>
+  <InputBox setData={setData} data={data}/>
+  <TaskDisplayer data={data}/>
+ </div>
   );
 }
 
