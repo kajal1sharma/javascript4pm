@@ -6,8 +6,8 @@ const TaskDisplayer = ({data}) => {
   return (
     <div>
       {/* {arr} */}
-      {data.map(ele=>{
-        return <SingleTask ele={ele}/>
+      {data.map((ele, index)=>{
+        return <SingleTask ele={ele} key={ele}/>
       })}
       
     </div>
