@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 
 function Timer({time}){
 
-  return <h2 style={{color:"red"}}>{time}</h2>
+  return <span style={{color:"red",fontSize:'40px'}}>{time}</span>
+  
 }
 
 export default Timer;
