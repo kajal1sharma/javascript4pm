@@ -10,10 +10,10 @@ const Menu = () => {
   const [product, setProduct] =useState([]);
   
   useEffect(()=>{
-    axios.get('https://pizza-and-desserts.p.rapidapi.com/desserts',{
+    axios.get('https://the-mexican-food-db.p.rapidapi.com/',{
       headers: {
         'X-RapidAPI-Key': '372e1be677mshb27e20e9a8d6ffbp116237jsn3d8a3869bb79',
-        'X-RapidAPI-Host': 'pizza-and-desserts.p.rapidapi.com'
+        'X-RapidAPI-Host': 'the-mexican-food-db.p.rapidapi.com'
       }
      })
      .then(response=>{
@@ -32,7 +32,7 @@ const Menu = () => {
     <div style={{display:'flex',gap:'200px',width:"100vw"}}> 
      {
       product.map(ele=>{
-        return <Dish imageUrl={ele.img} title={ele.name}/>
+        return <Dish imageUrl={ele.image} title={ele.title}/>
       })
      }
        {/* <div style={{marginLeft:"100px"}}>
