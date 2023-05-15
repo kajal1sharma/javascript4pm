@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Image from "./img/image1.webp"
 import { useEffect, useState } from 'react';
-
+import Restaurant from './Restaurant';
 function App() {
 
   const [flag , setFlag] = useState(true);
@@ -28,6 +28,7 @@ function App() {
       <button onClick={clickHandler}>Click</button>
       <h1>{count}</h1>
       <button onClick={countHandler}>Count Inc</button>
+      <Restaurant/>
     </div>
   );
 }
