@@ -1,18 +1,21 @@
 import React,{useState} from 'react'
 
-const InputTodo = ({clickHandler}) => {
+const InputTodo = ({saveHandler}) => {
 
   const [task,setTask] = useState("");
 
  function changeHandler(event) {
     setTask(event.target.value);
  }
-
+  function click(){
+    saveHandler(task);
+    setTask("")
+  }
  
   return (
     <div>
       <input value={task} type="text" onChange={changeHandler}/>
-      <button  onClick={()=>{clickHandler(task);setTask("")}}>Save</button>
+      <button  onClick={click}>Save</button>
     </div>
   )
 }
