@@ -6,7 +6,7 @@ const DisplayTasks = ({data, deleteHandler}) => {
     <div>
       {data.map(ele=>{
         return <li>
-            {/* {ele.name} */}
+            
             {<InputTask ele={ele.name}/>}
             
             <button onClick={()=>{deleteHandler(ele.id)}}>Delete</button>
