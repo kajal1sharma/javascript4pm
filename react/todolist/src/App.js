@@ -8,6 +8,7 @@ function reducer(currstate , action){//action = object
   console.log("entering reducer")
       if(action.type === "save"){
           let obj=  [...currstate,action.obj];
+          
           // console.log(obj);
           return obj;
       }
@@ -22,6 +23,15 @@ function reducer(currstate , action){//action = object
         })
         console.log(arr);
         return arr
+      }
+      else if(action.type ==="update"){
+          let maparr = currstate.map((ele)=>{
+            if(ele.id === action.id){
+              ele.name=action.name;
+            }
+            return ele;
+          })
+          return maparr;
       }
       return [...currstate]
       
@@ -52,11 +62,21 @@ function App() {
       }
       dispatch(action)
      }
+
+     function updateHandler(text,taskId){
+      let action ={
+        type:"update",
+        id:taskId,
+        name:text
+      }
+      dispatch(action)
+     }
+
     console.log(data);
   return (
     <div className="App">
       <InputTodo saveHandler={saveHandler}/>
-      <DisplayTasks data={data} deleteHandler={deleteHandler}/>
+      <DisplayTasks data={data} deleteHandler={deleteHandler} updateHandler={updateHandler}/>
     </div>
   );
 }
