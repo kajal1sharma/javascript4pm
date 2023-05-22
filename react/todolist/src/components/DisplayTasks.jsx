@@ -1,43 +1,24 @@
-import React,{useState} from 'react'
+import React,{useContext, useState} from 'react'
+import InputTask from "./InputTask";
+import ThemeContext from '../context/Theme';
 
 const DisplayTasks = ({data, deleteHandler,updateHandler}) => {
   
+ const theme =useContext(ThemeContext);
+
   return (
     <div>
       {data.map(ele=>{
-        return <li>
+        return <li style={{backgroundColor:theme.backgroundColor, color:theme.color}}>
             
-            {<InputTask text={ele.name} id={ele.id} updateHandler={updateHandler}/>}
+            {<InputTask  text={ele.name} id={ele.id} updateHandler={updateHandler}/>}
             
-            <button onClick={()=>{deleteHandler(ele.id)}}>Delete</button>
+            <button style={{backgroundColor:theme.deletebuttoncolor}} onClick={()=>{deleteHandler(ele.id)}}>Delete</button>
         </li>
       })}
     </div>
   )
 }
 
-function InputTask({text,updateHandler,id}){
-  //let str=text;
-  const [str,setStr] =useState(text);
-  const [edit, setEdit] =useState(false);
-  if(edit===true){
-    return <div>
-      <input onChange={(event)=>{setStr(event.target.value);console.log(str)}} value={str}  />
-      <button  onClick={()=>{
-              setEdit(false);
-              updateHandler(str,id)
-            }}>Save</button>
-    </div>
-  }
-  else{
-    return <div>
-      <p>{text}</p>
-      <button  onClick={()=>{
-              setEdit(true);
-            }}>Edit</button>
-    </div>
-  }
-
-}
 
 export default DisplayTasks
