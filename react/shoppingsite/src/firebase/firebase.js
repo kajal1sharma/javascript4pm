@@ -23,10 +23,14 @@ const db = getFirestore(app);
 async function getProduct(db) {
     const productCol = collection(db, 'products');
     const productSnapshot = await getDocs(productCol);
-    const productList = productSnapshot.docs.map(doc => doc.data());
+    const productList =await productSnapshot.docs.map( doc => doc.data());
     //console.log(productList)
     return productList;
   }
 
-export {getProduct,db};
-//const analytics = getAnalytics(app);
+  let  arr = await getProduct(db)
+
+
+
+
+export {arr};
