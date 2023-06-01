@@ -9,6 +9,7 @@ class About extends React.Component{
         this.state={flag:"false"}
     }
 
+    
     clickHandler(){
         console.log(this.state.flag)
         
@@ -17,12 +18,18 @@ class About extends React.Component{
         this.setState({flag:flag3});
     }
 
+    componentWillUnmount(){
+        console.log("about page unmounted")
+    }
+    componentDidMount(){
+        console.log("about page mounted")
+    }
     render(){
         return <div>
-            Helllo world
-            {console.log(this.state.flag)}
-            {this.state.flag}
+            <h1>This is About page</h1>
+            <h1>{this.state.flag}</h1>
             <button onClick={this.clickHandler.bind(this)}>toggle</button>
+            <input onChange={this.props.changeHandler}/>
         </div>
     }
 
