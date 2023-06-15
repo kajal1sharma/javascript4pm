@@ -1,0 +1,13 @@
+.container{
+
+    display: flex;
+    flex-direction: row;
+    width:450px;
+    flex-wrap: wrap;
+
+}
+
+.box{
+    width:150px;
+    height:150px;
+}
