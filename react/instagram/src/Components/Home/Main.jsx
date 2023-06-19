@@ -11,7 +11,7 @@ const Main = () => {
                 <header style={{height:'100px',width:"100%"}}>
                     <img src={ele.url} style={{height:"40px", width:"40px", borderRadius:"50%"}} alt=".."/>
                 </header>
-                <Main style={{width:"100%"}}>
+                <div style={{width:"100%"}}>
                 
                     <img src={ele.photoUrl} alt=".." style={{width:"100%"}}/>
                     <section>
@@ -19,7 +19,7 @@ const Main = () => {
                             <div><span>{comment.name}</span><span>{comment.comment}</span></div>
                         })}
                    </section>
-                </Main>
+                </div>
                 
             </div>
       })}
