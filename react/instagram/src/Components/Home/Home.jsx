@@ -7,10 +7,11 @@ import Status from "./Status";
 const Home = () => {
   return (
     <div>
+      <Status/>
       <Sidebar/>
       <Main/>
       <RightPanel/>
-      <Status/>
+      
     </div>
   )
 }

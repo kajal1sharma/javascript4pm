@@ -16,7 +16,7 @@ const Main = () => {
                     <img src={ele.photoUrl} alt=".." style={{width:"100%"}}/>
                     <section>
                         {ele.comments.map(comment=>{
-                            <div><span>{comment.name}</span><span>{comment.comment}</span></div>
+                           return <div><span>{comment.name}</span><span>{comment.comment}</span></div>
                         })}
                    </section>
                 </div>
